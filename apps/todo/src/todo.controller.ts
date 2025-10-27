@@ -1,4 +1,4 @@
-import { Controller } from '@nestjs/common';
+import { Controller, HttpException } from '@nestjs/common';
 import { GrpcMethod } from '@nestjs/microservices';
 import {
   type Empty,
@@ -28,10 +28,7 @@ export class TodoController implements TodoServiceController {
   @GrpcMethod(TODO_SERVICE_NAME, 'getTodo')
   getTodo(request: GetTodoId) {
     const todo = this.todoService.getTodo(request);
-    if (todo) {
-      return todo;
-    }
-    throw new Error('Todo not found');
+    return todo;
   }
 
   @GrpcMethod(TODO_SERVICE_NAME, 'deleteTodo')
