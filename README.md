@@ -1,5 +1,6 @@
 ```shell
-cd api-2
+cd nestjs-microservice-monorepo-todo
+
 yarn install
 yarn prisma migrate dev
 yarn start:dev api-2
