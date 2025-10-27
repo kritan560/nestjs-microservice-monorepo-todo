@@ -1,6 +1,7 @@
 ```shell
 cd api-2
 yarn install
+yarn prisma migrate dev
 yarn start:dev api-2
 yarn start:dev todo
 
